@@ -238,3 +238,79 @@ main{
     text-align: center;
 
 }
+
+/* contactanos*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: #fbfdfd;
+    font-family: Arial, Helvetica, sans-serif;  
+  }
+  
+  .form-contact {
+    background: #FFF;
+    width: 400px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 7px 13px 37px rgba(0, 0, 0, .8);
+  }
+  
+  header.Contacto {
+    width: 100%;
+    background: #c49725;
+    overflow: hidden;
+    color: white;
+  }
+  
+  header span {
+    font-size: 100px;
+    display: block;
+    text-align: center;
+    padding: 2.5rem;
+  }
+  
+  .contact {
+    padding: .8rem;
+    overflow: hidden;
+    color: gray;
+  }
+  
+  .contact label, .contact input, .contact textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;   
+  }
+  
+  .contact label {
+    font-weight: 700;
+  }
+  
+  .contact input:not([type='submit']), .contact textarea {
+    border: none;
+    border-bottom: 2px solid #c49725;
+    margin-bottom: 10px;
+    font-size: 20px;
+    outline: none;
+    color: gray;
+  }
+  
+  .contact textarea {
+    min-height: 100px;
+  }
+  
+  input[type='submit'] {
+    padding: 10px;
+    background: #c49725;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  
+  }
