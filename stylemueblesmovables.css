@@ -212,3 +212,28 @@ body::-webkit-scrollbar-track {
     max-height: 505px;
 }
 
+/**Main **/
+
+main{
+    background-color: #c49725;
+
+
+}
+
+#p1{
+    background-color: #c49725;
+	width: 98%;
+	float: left;
+	padding-top: 20px;
+	text-align: center;
+	
+
+}
+#p2{
+    background-color: #c49725;
+	width: 98%;
+	float: right;
+	padding-top: 10px;
+    text-align: center;
+
+}
