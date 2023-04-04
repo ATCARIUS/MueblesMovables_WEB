@@ -54,7 +54,7 @@ body::-webkit-scrollbar-track {
     padding: 0 10rem;
     background-color: var(--bg-color);
     position: relative;
-    top: -90px;
+    top: -60px;
 }
 
 .logo img {
@@ -172,7 +172,7 @@ body::-webkit-scrollbar-track {
 
     .navbar input[type="checkbox"]:checked ~ .hamburger__lines .line3 {
         transform: rotate(-45deg);
-    } 
+    }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1200px) {
@@ -227,7 +227,7 @@ main{
 	float: left;
 	padding-top: 20px;
 	text-align: center;
-	
+
 
 }
 #p2{
@@ -246,12 +246,12 @@ main{
     padding: 0;
     box-sizing: border-box;
   }
-  
+
   body {
     background: #fbfdfd;
-    font-family: Arial, Helvetica, sans-serif;  
+    font-family: Arial, Helvetica, sans-serif;
   }
-  
+
   .form-contact {
     background: #FFF;
     width: 400px;
@@ -261,37 +261,37 @@ main{
     transform: translate(-50%, -50%);
     box-shadow: 7px 13px 37px rgba(0, 0, 0, .8);
   }
-  
+
   header.Contacto {
     width: 100%;
     background: #c49725;
     overflow: hidden;
     color: white;
   }
-  
+
   header span {
     font-size: 100px;
     display: block;
     text-align: center;
     padding: 2.5rem;
   }
-  
+
   .contact {
     padding: .8rem;
     overflow: hidden;
     color: gray;
   }
-  
+
   .contact label, .contact input, .contact textarea {
     display: block;
     width: 100%;
-    margin-bottom: 5px;   
+    margin-bottom: 5px;
   }
-  
+
   .contact label {
     font-weight: 700;
   }
-  
+
   .contact input:not([type='submit']), .contact textarea {
     border: none;
     border-bottom: 2px solid #c49725;
@@ -300,11 +300,11 @@ main{
     outline: none;
     color: gray;
   }
-  
+
   .contact textarea {
     min-height: 100px;
   }
-  
+
   input[type='submit'] {
     padding: 10px;
     background: #c49725;
@@ -312,5 +312,35 @@ main{
     color: white;
     font-size: 20px;
     cursor: pointer;
-  
-  }
+
+}
+
+
+.cookies {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: black;
+    color: #c49725;
+    font-family: arial;
+    text-align: center;
+}
+
+.cookies__boton {
+
+    background: initial;
+    border: 2px solid rgb(255, 255, 255);
+    padding: 1rem;
+    font-size: 1rem;
+    color:white;
+    width: 5rem;
+    text-align: center;
+}
+
+.links{
+    color: black;
+    text-decoration: none;
+
+}
+
