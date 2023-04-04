@@ -172,7 +172,7 @@ body::-webkit-scrollbar-track {
 
     .navbar input[type="checkbox"]:checked ~ .hamburger__lines .line3 {
         transform: rotate(-45deg);
-    } 
+    }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1200px) {
