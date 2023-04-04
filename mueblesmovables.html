@@ -17,14 +17,18 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 <!-- HEADER -->
+
 <header class="flex w-full fixed top-0 z-1">
     <nav class="flex justify-content-between w-full navbar">
         <span class="logo cursor-pointer" onclick="scrollToSection('home')">
             <img src="MueblesMovables.jpg" alt="Logo Muebleria" width="150" height="150">
         </span>
+
+
         <input type="checkbox" aria-label="Checkbox para mostrar y quitar carrito"
             class="checkbox xl:hidden">
         <div class="hamburger__lines">
@@ -32,14 +36,12 @@
             <span class="line line2"></span>
             <span class="line line3"></span>
         </div>
+
         <div class="header__info flex align-items-center gap-3">
             <ul class="flex flex-column xl:flex-row list-none">
-                <li onclick="scrollToSection('about')">Inicio</li>
-                <li onclick="scrollToSection('services')">Nosotros</li>
-                
-                
-                <li onclick="scrollToSection('portfolio')"><a href="mueblesmovablesproductos.html">Productos</a></li>
-
+                <li onclick="scrollToSection('Carrusel')">Inicio</li>
+                <li onclick="scrollToSection('p1')">Nosotros</li>
+                <li onclick="scrollToSection('portfolio')"><a class="links" href="mueblesmovablesproductos.html">Productos</a></li>
                 <li onclick="scrollToSection('contact')">Contactanos</li>
             </ul>
             <div class="hireMe__button pt-4">
@@ -92,12 +94,25 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+
+    <section class="cookies">
+        <h2 class="cookiestitulo">¿Aceptas nuestras Cookies?</h2>
+        <p class="cookiestexto">Usamos cookies para mejorar tu experiencia en la web.</p>
+        <div class="cookiesbotones">
+            <button class="cookiesboton cookiesboton--no">No</button>
+            <button class="cookiesboton cookies__boton--si">Si</button>
+        </div>
+    </section>
+
+    <!-- No borrar, aquí se generarán todas las etiquetas <script> si acepta el usuario -->
+    <div id="nuevosScripts"></div>
+    </div>
      <!--Descripcion de Nosotros-->
     <main>
         <div id="p1" class="col">
         <section id="p1" class="col">
             <img src="access/muebles2-removebg-preview.png" style="float: left" width=35%; height=25%; alt="muebles2">
-            
+
             <h1>Descripción de la empresa</h2>
             <br>
             <p class="text-justify">Nuestra empresa de muebles es una compañía líder en el sector de la fabricación y venta de muebles para el hogar u oficina.</p>
@@ -128,33 +143,168 @@
         </section>
         </div>
       </main>
-        
-        
+
+<div></div>
       <h3>Contactanos</h3>
-  
+
     <section class="form-contact">
         <header class="Contacto">
           <span>
             <i class="fa fa-paper-plane" aria-hidden="true"></i>
           </span>
         </header>
-    
+
         <form action="" class="contact" method="POST">
           <label for="nombres">Nombres</label>
           <input type="text" name="nombres" id="nombres">
-    
+
           <label for="correo">Correo</label>
           <input type="text" name="correo" id="correo">
-    
+
           <label for="nombres">Celular</label>
           <input type="text" name="celular" id="celular">
-    
+
           <label for="mensaje">Mensaje</label>
           <textarea name="mensaje" id="mensaje"></textarea>
           <input type="submit" value="Enviar">
-    
-    
+
+
         </form>
       </section>
+
 </body>
+<div id="nuevosScripts"></div>
+
+<script defer>
+let cookies = () => {
+    //======================================================================
+    // COOKIES
+    //======================================================================
+
+    //-----------------------------------------------------
+    // Configuración
+    //-----------------------------------------------------
+    const urlsScriptsCookies = ['https://analytics.google.com', 'https://facebook.com'];
+
+    function contenidoScriptsCookies () {
+        ////////////  ¿Google Analítics? /////////////
+        ////////////  ¿Facebook Pixel? /////////////
+        ////////////  ¿Admob? /////////////
+        ////////////  etc  /////////////
+    }
+
+
+    //-----------------------------------------------------
+    // Variables
+    //-----------------------------------------------------
+    const seccionCookie = document.querySelector('section.cookies');
+    const cookieSi = document.querySelector('.cookies__boton--si');
+    const cookieNo = document.querySelector('.cookies__boton--no');
+    const nuevosScripts = document.querySelector('#nuevosScripts');
+
+    //-----------------------------------------------------
+    // Funciones
+    //-----------------------------------------------------
+
+    /**
+      * Método que oculta la sección de Cookie para siempre
+      */
+    function ocultarCookie() {
+        // Borra la sección de cookies en el HTML
+        seccionCookie.remove();
+    }
+
+    /**
+      * Método que marca las cookies como aceptadas
+      */
+    function aceptarCookies() {
+        // Oculta el HTML de cookies
+        ocultarCookie();
+        // Guarda que ha aceptado
+        localStorage.setItem('cookie', true);
+        // Tu codigo a ejecutar si aceptan las cookies
+        ejecutarSiAcepta();
+    }
+
+    /**
+      * Método que marca las cookies como denegadas
+      */
+    function denegarCookies() {
+        // Oculta el HTML de cookies
+        ocultarCookie();
+        // Guarda que ha aceptado
+        localStorage.setItem('cookie', false);
+    }
+
+    /**
+      * Método que ejecuta tu código si aceptan las cookies
+      */
+    function ejecutarSiAcepta() {
+        // Crea los <script>
+        urlsScriptsCookies.forEach((url) => {
+            const nuevoScript = document.createElement('script');
+            nuevoScript.setAttribute('src', url);
+            nuevosScripts.appendChild(nuevoScript);
+        });
+        // Lanza los códigos
+        contenidoScriptsCookies();
+    }
+
+    /**
+      * Método que inicia la lógica
+      */
+    function iniciar() {
+        // Comprueba si en el pasado el usuario ha marcado una opción
+        if (localStorage.getItem('cookie') !== null) {
+            if(localStorage.getItem('cookie') === 'true') {
+                // Aceptó
+                aceptarCookies();
+            } else {
+                // No aceptó
+                denegarCookies();
+            }
+        }
+    }
+
+    //-----------------------------------------------------
+    // Eventos
+    //-----------------------------------------------------
+    cookieSi.addEventListener('click',aceptarCookies, false);
+    cookieNo.addEventListener('click',denegarCookies, false);
+
+    return {
+        iniciar: iniciar
+    }
+}
+
+// Activa el código. Comenta si quieres desactivarlo.
+cookies().iniciar();
+
+</script>
+<script>
+    const filterContainer = document.querySelector(".gallerycategories");
+    const galleryItems = document.querySelectorAll(".projectcard");
+
+    filterContainer.addEventListener("click", (event) => {
+        if (event.target.classList.contains("filter-item")) {
+            filterContainer.querySelector(".active").classList.remove("active");
+            event.target.classList.add("active")
+            const filterValue = event.target.getAttribute("data-filter")
+            galleryItems.forEach(item => {
+                if (item.classList.contains(filterValue) || filterValue === "all") {
+                    item.classList.remove("hide")
+                    item.classList.add("show")
+                } else {
+                    item.classList.remove("show")
+                    item.classList.add("hide")
+                }
+            })
+        }
+    })
+
+    function scrollToSection(sectionId){
+        document.getElementById(sectionId).scrollIntoView({behavior:"smooth"})
+    }
+</script>
 </html>
+
