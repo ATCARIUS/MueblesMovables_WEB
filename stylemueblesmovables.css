@@ -72,8 +72,8 @@ body::-webkit-scrollbar-track {
     background-color: var(--secondary-bg-color);
     color: var(--font-color);
     font-family: var(--font);
-    font-size: small;
-    padding: 1rem 1.5rem;
+    font-size: medium;
+    padding: 2rem 2.5rem;
     border-color: unset;
     border-width: 0;
 }
