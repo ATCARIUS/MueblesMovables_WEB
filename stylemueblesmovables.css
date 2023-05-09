@@ -70,13 +70,14 @@ body::-webkit-scrollbar-track {
 
 .hireMe__button a {
     background-color: var(--secondary-bg-color);
-    color: var(--font-color);
-    font-family: var(--font);
-    font-size: medium;
-    padding: 2rem 2.5rem;
+    color: black;
+    font-family:"Poppins", sans-serif;
+    font-size:0px;
+    padding: 2rem 3.5rem;
     border-color: unset;
     border-width: 0;
 }
+
 .header__info ul li:hover {
     background-color: var(--secondary-bg-color);
 }
