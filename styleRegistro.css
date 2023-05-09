@@ -13,10 +13,8 @@ body{
   padding: 0;
   height: 100vh;
   min-height: 100vh;
-	margin: 0;
-  margin: 0;
   padding: 0;
-  background: linear-gradient(120deg,#eccd80, #af9040);
+  background: linear-gradient(120deg,rgba(235, 191, 81, 0.793), #c49725);
   height: 100vh;
   overflow: hidden;
 }
@@ -178,12 +176,13 @@ input[type="button"]:hover{
 }
 
 .volver_btn a {
-    border-radius: 10px;
-    background-color: #c49725;
-    color: var(--font-color);
-    font-family: var(--font);
-    font-size: medium;
-    padding:1rem 2.5rem;
-    border-color: unset;
-    border-width: 0;
+  border-radius: 10px;
+  background-color: #c49725;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: medium;
+  padding:1rem 2.5rem;
+  border-color: unset;
+  border-width: 0;
 }
+ 
