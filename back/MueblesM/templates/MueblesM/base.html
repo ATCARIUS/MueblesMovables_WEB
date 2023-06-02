@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/stylemueblesmovables.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stylemueblesmovablesproductos.css'%}">
+
+    <link rel="stylesheet" href='https://unpkg.com/primeflex@^3/primeflex.css'>
+    <link rel="stylesheet" href='https://unpkg.com/primeflex/themes/saga-blue.css'>
+
+
+    <script src='https://kit.fontawesome.com/b3f17f1dac.js' crossorigin="anonymous"></script>
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+             <!-- Carrusel Librerias  -->
+    <link rel="stylesheet" href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css'>
+
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js'></script>
+
+    <title>Barra</title>
+</head>
+<body>
+    <header class="flex w-full fixed top-0 z-1">
+        <nav class="flex justify-content-between w-full navbar">
+            <span class="logo cursor-pointer" onclick="scrollToSection('home')">
+
+                <img src="{% static 'MueblesMovables.jpg' %}" alt="Logo Muebleria" width="150" height="150">
+            </span>
+
+
+            <input type="checkbox" aria-label="Checkbox para mostrar y quitar carrito"
+                class="checkbox xl:hidden">
+            <div class="hamburger__lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </div>
+
+            <div class="header__info flex align-items-center gap-3">
+                <ul class="flex flex-column xl:flex-row list-none">
+                    <li onclick="scrollToSection('Carrusel')"><a class="links" href="/">Inicio</a></li>
+                    <li onclick="scrollToSection('p1')">Nosotros</li>
+                    <li onclick="scrollToSection('portfolio')"><a class="links" href="/mueblesmovablesproductos/">Productos</a></li>
+                    <li onclick="scrollToSection('contact')">Contactanos</li>
+                </ul>
+                <div class="hireMe__button pt-4">
+                    <a href="" aria-label="Enviar mensaje al correo"
+                        class="cursor-pointer no-underline border-round-lg text-xl xl:text-sm">CARRITO</a>
+                </div>
+                <div class="hireMe__button pt-4">
+                    <a href="/InicioSesion/" aria-label="Enviar mensaje al correo"
+                        class="cursor-pointer no-underline border-round-lg text-xl xl:text-sm">LOGIN</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div id="contenido"></div>
+        {% block contenido %}
+
+        {% endblock %}
+</body>
+<div id="nuevosScripts"></div>
+
+<script defer>
+let cookies = () => {
+    //======================================================================
+    // COOKIES
+    //======================================================================
+
+    //-----------------------------------------------------
+    // Configuración
+    //-----------------------------------------------------
+    const urlsScriptsCookies = ['https://analytics.google.com', 'https://facebook.com'];
+
+    function contenidoScriptsCookies () {
+        ////////////  ¿Google Analítics? /////////////
+        ////////////  ¿Facebook Pixel? /////////////
+        ////////////  ¿Admob? /////////////
+        ////////////  etc  /////////////
+    }
+
+
+    //-----------------------------------------------------
+    // Variables
+    //-----------------------------------------------------
+    const seccionCookie = document.querySelector('section.cookies');
+    const cookieSi = document.querySelector('.cookies__boton--si');
+    const cookieNo = document.querySelector('.cookies__boton--no');
+    const nuevosScripts = document.querySelector('#nuevosScripts');
+
+    //-----------------------------------------------------
+    // Funciones
+    //-----------------------------------------------------
+
+    /**
+      * Método que oculta la sección de Cookie para siempre
+      */
+    function ocultarCookie() {
+        // Borra la sección de cookies en el HTML
+        seccionCookie.remove();
+    }
+
+    /**
+      * Método que marca las cookies como aceptadas
+      */
+    function aceptarCookies() {
+        // Oculta el HTML de cookies
+        ocultarCookie();
+        // Guarda que ha aceptado
+        localStorage.setItem('cookie', true);
+        // Tu codigo a ejecutar si aceptan las cookies
+        ejecutarSiAcepta();
+    }
+
+    /**
+      * Método que marca las cookies como denegadas
+      */
+    function denegarCookies() {
+        // Oculta el HTML de cookies
+        ocultarCookie();
+        // Guarda que ha aceptado
+        localStorage.setItem('cookie', false);
+    }
+
+    /**
+      * Método que ejecuta tu código si aceptan las cookies
+      */
+    function ejecutarSiAcepta() {
+        // Crea los <script>
+        urlsScriptsCookies.forEach((url) => {
+            const nuevoScript = document.createElement('script');
+            nuevoScript.setAttribute('src', url);
+            nuevosScripts.appendChild(nuevoScript);
+        });
+        // Lanza los códigos
+        contenidoScriptsCookies();
+    }
+
+    /**
+      * Método que inicia la lógica
+      */
+    function iniciar() {
+        // Comprueba si en el pasado el usuario ha marcado una opción
+        if (localStorage.getItem('cookie') !== null) {
+            if(localStorage.getItem('cookie') === 'true') {
+                // Aceptó
+                aceptarCookies();
+            } else {
+                // No aceptó
+                denegarCookies();
+            }
+        }
+    }
+
+    //-----------------------------------------------------
+    // Eventos
+    //-----------------------------------------------------
+    cookieSi.addEventListener('click',aceptarCookies, false);
+    cookieNo.addEventListener('click',denegarCookies, false);
+
+    return {
+        iniciar: iniciar
+    }
+}
+
+// Activa el código. Comenta si quieres desactivarlo.
+cookies().iniciar();
+
+</script>
+<script>
+    const filterContainer = document.querySelector(".gallerycategories");
+    const galleryItems = document.querySelectorAll(".projectcard");
+
+    filterContainer.addEventListener("click", (event) => {
+        if (event.target.classList.contains("filter-item")) {
+            filterContainer.querySelector(".active").classList.remove("active");
+            event.target.classList.add("active")
+            const filterValue = event.target.getAttribute("data-filter")
+            galleryItems.forEach(item => {
+                if (item.classList.contains(filterValue) || filterValue === "all") {
+                    item.classList.remove("hide")
+                    item.classList.add("show")
+                } else {
+                    item.classList.remove("show")
+                    item.classList.add("hide")
+                }
+            })
+        }
+    })
+
+    function scrollToSection(sectionId){
+        document.getElementById(sectionId).scrollIntoView({behavior:"smooth"})
+    }
+</script>
+</html>

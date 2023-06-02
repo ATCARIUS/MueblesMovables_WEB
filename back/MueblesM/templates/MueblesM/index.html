@@ -1,9 +1,9 @@
+{% extends "MueblesM/base.html" %}
 <!DOCTYPE html>
 <html lang="en">
 
-{% load static %}
-
 <head>
+    {% load static %}
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,9 +26,11 @@
 
 </head>
 <body>
-<!-- HEADER -->
 
-<header class="flex w-full fixed top-0 z-1">
+
+
+<!-- HEADER -->
+{% comment %} <header class="flex w-full fixed top-0 z-1">
     <nav class="flex justify-content-between w-full navbar">
         <span class="logo cursor-pointer" onclick="scrollToSection('home')">
 
@@ -48,7 +50,7 @@
             <ul class="flex flex-column xl:flex-row list-none">
                 <li onclick="scrollToSection('Carrusel')">Inicio</li>
                 <li onclick="scrollToSection('p1')">Nosotros</li>
-                <li onclick="scrollToSection('portfolio')"><a class="links" href="InicioSesion.html">Productos</a></li>
+                <li onclick="scrollToSection('portfolio')"><a class="links" href="mueblesmovablesproductos.html">Productos</a></li>
                 <li onclick="scrollToSection('contact')">Contactanos</li>
             </ul>
             <div class="hireMe__button pt-4">
@@ -56,12 +58,14 @@
                     class="cursor-pointer no-underline border-round-lg text-xl xl:text-sm">CARRITO</a>
             </div>
             <div class="hireMe__button pt-4">
-                <a href="InicioSesion.html" aria-label="Enviar mensaje al correo"
+                <a href="{% static 'InicioSesion.html' %}" aria-label="Enviar mensaje al correo"
                     class="cursor-pointer no-underline border-round-lg text-xl xl:text-sm">LOGIN</a>
             </div>
         </div>
     </nav>
-</header>
+
+</header> {% endcomment %}
+    {% block contenido %}
     <div id="Carrusel" class="carousel slide" data-ride="carousel">
 
         <!-- Indicadores de en que parte va el carrusel junto con la creacion de mas diapositivas para el carrusel  -->
@@ -185,6 +189,7 @@
       </section>
 
 </body>
+{% endblock %}
 <div id="nuevosScripts"></div>
 
 <script defer>

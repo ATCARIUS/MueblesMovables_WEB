@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   {% load static %}
-  {% extends 'index.html' %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -37,14 +36,14 @@
             Olvidaste Tu Contraseña?
           </div>
           <div class="registro">
-            No tienes cuenta? <br><a href="{% static 'Muebles/RegistroSesion.html' %}" class="links_btn">Crea un Nuevo Usuario</a>
+            No tienes cuenta? <br><a href="/RegistroSesion/" class="links_btn">Crea un Nuevo Usuario</a>
           </div>
           <button>Login</button>
       </form>
     </div>
     <script src="{% static 'Js/JsValidacionSn.js' %}"></script>
     <div class="volver_btn">
-      <a href="index.html" aria-label="Enviar mensaje al correo"
+      <a href="/" aria-label="Enviar mensaje al correo"
           class="cursor-pointer no-underline border-round-lg text-xl xl:text-sm">Volver</a>
   </div>
 </body>

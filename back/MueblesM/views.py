@@ -3,19 +3,19 @@ from django.shortcuts import render
 # Create your views here.
 
 def index(request):
-    context={}
-    return render(request, 'MueblesM/index.html', context)
+
+    return render(request, 'MueblesM/index.html')
 
 def InicioSesion(request):
-    context={}
-    return render(request,'MueblesM/InicioSesion.html', context)
+
+    return render(request,'MueblesM/InicioSesion.html')
 
 
 def mueblesmovablesproductos(request):
-    context={}
-    return render(request,'MueblesM/mueblesmovablesproductos.html', context)
+
+    return render(request,'MueblesM/mueblesmovablesproductos.html')
 
 
 def RegistroSesion(request):
-    context={}
-    return render(request ,'MueblesM/RegistroSesion.html', context)
+
+    return render(request ,'MueblesM/RegistroSesion.html')
