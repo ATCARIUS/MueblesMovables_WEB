@@ -1,0 +1,41 @@
+{% comment %} {% extends "MueblesM/base.html" %}
+
+{% block contenido %}
+
+<table class="table table-striped table-hover">
+
+<table>
+    <tr>
+        <th>Nombre</th>
+        <th>marca</th>
+        <th>Detalle</th>
+        <th>¿Es nuevo?</th>
+        <th>precio</th>
+    </tr>
+
+    {% for p in productos %}
+
+    <tr>
+        <td>{{ p.nombre | title }}</td>
+        <td>{{ p.marca | title }}</td>
+        <td>{{ p.tipo_mueble | title }}</td>
+        <td>{{ p.precio | title }}</td>
+        <td>{{ p.tipo_madera | title }}</td>
+        <td>{{ p.estado | title }}</td>
+        <td>{{ p.fecha_fabricacion | title }}</td>
+        <td>{{ p.descripcion | title }}</td>
+
+        {% comment %} <td>
+            <!-- #<a href="{% url 'modificarProductos' p.id %}" class="btn btn-info btn-sm" >Modificar</a>
+            #<a href="{% url 'eliminarProductos' p.id %}" class="btn btn-danger btn-sm" >Eliminar</a> -->
+
+
+        </td> {% endcomment %}
+    {% comment %} </tr>
+    {% endfor %}
+
+
+</table>
+
+
+{% endblock %} {% endcomment %}

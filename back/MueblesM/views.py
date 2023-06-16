@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect,get_object_or_404
+from .forms import ProductoForm,Mueble
 
 # Create your views here.
 
@@ -19,3 +20,30 @@ def mueblesmovablesproductos(request):
 def RegistroSesion(request):
 
     return render(request ,'MueblesM/RegistroSesion.html')
+
+
+def agregarProducto(request):
+
+    data = {
+        'form': ProductoForm()
+
+    }
+    if request.method ==  'POST':
+        formulario = ProductoForm(data=request.POST, files=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"]= "guardado correctamente"
+        else:
+            data["form"] = formulario
+
+    return render(request, 'MueblesM/muebles/agregar.html',data)
+
+
+def listarProductos(request):
+
+    productos = Mueble.objects.all()
+
+    data = {
+        'productos': productos
+    }
+    return render(request, 'MueblesM/muebles/listar.html',data)

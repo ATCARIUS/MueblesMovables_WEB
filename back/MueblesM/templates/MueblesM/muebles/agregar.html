@@ -1,0 +1,65 @@
+
+<br><br>
+<div id="agregarPr">
+<div class="row">
+    <div class="col-12 col-md-6 offset-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h2>NUEVO PRODUCTO</h2>
+                <hr>
+
+        <form action="" method="post" enctype="multipart/form-data">
+
+            {% csrf_token %}
+            {{ form }}
+
+            <div class="d-flex justify-content-end">
+                <input type="reset" value="Cancelar">
+                &nbsp;
+                <input type="submit" value="Guardar" class="btn btn-primary">
+            </div>
+
+        </form>
+        {{ mensaje }}
+        </div>
+    </div>
+</div>
+</div>
+
+<style>
+    body{
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        min-height: 100vh;
+        padding: 0;
+        background: linear-gradient(120deg,rgba(235, 191, 81, 0.793), #c49725);
+        height: 100vh;
+        overflow: hidden;
+    }
+
+      #agregarPr {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 10 12px 15px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        width: 569px;
+      height: 670px;
+        max-width: 700%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    #agregarPr h1{
+      text-align: center;
+      padding: 10px 0;
+      border-bottom: 1px solid silver;
+    }
+    #agregarPr form{
+      padding: 0 10px;
+      box-sizing: border-box;
+
+    }
+</style>
