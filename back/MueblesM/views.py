@@ -47,3 +47,4 @@ def listarProductos(request):
         'productos': productos
     }
     return render(request, 'MueblesM/muebles/listar.html',data)
+

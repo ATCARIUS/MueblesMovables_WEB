@@ -22,15 +22,14 @@ estados = [
 ]
 
 class Mueble(models.Model):
-    nombre = models.CharField(max_length=50)
     marca = models.CharField(max_length=50)
     tipo_mueble = models.IntegerField(choices=opciones_muebles)
     precio = models.IntegerField()
     tipo_madera = models.CharField(max_length=50)
-    estado= models.IntegerField(choices=estados)
+    nuevo = models.BooleanField()
     fecha_fabricacion = models.DateField()
     descripcion = models.ForeignKey(Descripcion, on_delete=models.PROTECT)
 
     def __str__(self) :
-        return self.modelo
+        return self.marca
 

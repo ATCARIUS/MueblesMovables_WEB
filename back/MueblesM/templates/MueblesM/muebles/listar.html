@@ -1,4 +1,4 @@
-{% comment %} {% extends "MueblesM/base.html" %}
+
 
 {% block contenido %}
 
@@ -6,17 +6,17 @@
 
 <table>
     <tr>
-        <th>Nombre</th>
-        <th>marca</th>
-        <th>Detalle</th>
-        <th>¿Es nuevo?</th>
+        <th>Marca</th>
+        <th>tipo_mueble</th>
         <th>precio</th>
+        <th>tipo_madera</th>
+        <th>estado</th>
+        <th>fecha_fabricacion</th>
+        <th>descripcion</th>
     </tr>
-
     {% for p in productos %}
 
     <tr>
-        <td>{{ p.nombre | title }}</td>
         <td>{{ p.marca | title }}</td>
         <td>{{ p.tipo_mueble | title }}</td>
         <td>{{ p.precio | title }}</td>
@@ -25,17 +25,12 @@
         <td>{{ p.fecha_fabricacion | title }}</td>
         <td>{{ p.descripcion | title }}</td>
 
-        {% comment %} <td>
-            <!-- #<a href="{% url 'modificarProductos' p.id %}" class="btn btn-info btn-sm" >Modificar</a>
-            #<a href="{% url 'eliminarProductos' p.id %}" class="btn btn-danger btn-sm" >Eliminar</a> -->
 
-
-        </td> {% endcomment %}
-    {% comment %} </tr>
+    </tr>
     {% endfor %}
 
 
 </table>
 
 
-{% endblock %} {% endcomment %}
+{% endblock %}
