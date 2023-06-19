@@ -76,3 +76,26 @@ def listarProductos(request):
     }
     return render(request, 'MueblesM/muebles/listar.html',data)
 
+
+def modificarProductos(request, id):
+        
+    producto = get_object_or_404(Mueble, id=id)
+
+    data = {
+        'form': ProductoForm(instance=producto),
+    }
+    if request.method ==  'POST':
+        formulario = ProductoForm(data=request.POST, instance=producto, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"]= "modificado correctamente"
+            return redirect(to="listarProductos")
+        else:
+            data["form"] = formulario
+    return render(request ,'MueblesM/muebles/modificar.html',data)
+
+
+def eliminarProductos(request, id):
+    producto = get_object_or_404(Mueble, id=id)
+    producto.delete()
+    return redirect(to="listarProductos")
