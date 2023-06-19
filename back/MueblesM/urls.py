@@ -6,6 +6,8 @@ urlpatterns = [
     path('mueblesmovablesproductos/',mueblesmovablesproductos,name='mueblesmovablesproductos'),
     path('agregarProducto/',agregarProducto, name="agregarProducto"),
     path('listarProductos/',listarProductos, name="listarProductos"),
-    path('registro/',registro, name="registro")
+    path('registro/',registro, name="registro"),
+    path('eliminarProductos/<id>/',eliminarProductos, name="eliminarProductos"),
+    path('modificarProductos/<id>/',modificarProductos, name="modificarProductos"),
 
 ]
