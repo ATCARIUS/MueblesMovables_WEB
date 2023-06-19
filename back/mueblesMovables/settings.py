@@ -38,9 +38,19 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
+    'crispy_forms',
     'MueblesM',
 
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+X_FRAME_OPTIONS='SAMEORIGIN'
+
+MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
+
+LOGIN_REDIRECT_URL = "login"
+LOGOUT_REDIRECT_URL = "index"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -50,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'mueblesMovables.urls'
@@ -57,7 +68,7 @@ ROOT_URLCONF = 'mueblesMovables.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -127,3 +138,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
