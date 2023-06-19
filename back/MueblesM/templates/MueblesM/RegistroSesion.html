@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{% comment %} <!DOCTYPE html>
 <html lang="en">
 <head>
   {% load static %}
@@ -18,24 +18,10 @@
         <div class="header">
           <h1>  Crea tu Cuenta </h1>
         </div>
-            <form  id="form" class="form">
+            <form  id="form" class="form" method="post">
           <div class="form-control">
             <label for="username">Nombres</label>
             <input type="text"  id="username" placeholder="Ej: Martin Alejandro">
-            <i class="fas fa-check-circle"></i>
-            <i class="fas fa-exclamation-circle"></i>
-            <small>Error message</small>
-          </div>
-          <div class="form-control">
-            <label for="username2">Apellidos</label>
-            <input type="text"  id="username2" placeholder="Ej: Casas Vergara">
-            <i class="fas fa-check-circle"></i>
-            <i class="fas fa-exclamation-circle"></i>
-            <small>Error message</small>
-          </div>
-          <div class="form-control">
-            <label for="email">Correo electronico</label>
-            <input type="email"  id="email" placeholder="Ej: mart.casas@duocuc.cl ">
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
             <small>Error message</small>
@@ -57,7 +43,7 @@
           <div class="registro">
             Ya tienes una cuenta? <br><a href="InicioSesion.html" class="links_btn">Ingresa!</a>
           </div>
-          <button>Registrar</button>
+          <input type="submit",value="registrar" class="btn btn-success float-center">
       </form>
     </div>
     <script src="{% static 'Js/JsValidaciones.js' %}"></script>
@@ -67,4 +53,4 @@
     </div>
 </body>
 </html>
-
+ {% endcomment %}
