@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     {% load static %}
+
+{% block js%}
+{% endblock %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,7 +33,7 @@
         <nav class="flex justify-content-between w-full navbar">
             <span class="logo cursor-pointer" onclick="scrollToSection('home')">
 
-                <img src="{% static 'MueblesMovables.jpg' %}" alt="Logo Muebleria" width="150" height="150">
+                <img src="{% static 'MueblesMovables.jpg' %}" alt="Logo Muebleria" >
             </span>
 
 
@@ -54,7 +58,7 @@
                 </div>
 
                 <div class="hireMe__button pt-4">
-                    <a href="/login/" aria-label="Enviar mensaje al correo"
+                    <a href="/InicioSesion/" aria-label="Enviar mensaje al correo"
                         class="cursor-pointer no-underline border-round-lg text-xl xl:text-sm">LOGIN</a>
                 </div>
             </div>
@@ -66,6 +70,71 @@
 
         {% endblock %}
 </body>
+<footer id="p2" class=" bg-dark text-center text-white">
+
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-4" href="#!" role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-4" href="#!" role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-4" href="#!" role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-4" href="#!" role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a class="btn btn-outline-light btn-floating m-4" href="#!" role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+
+      <!-- Github -->
+      <!-- Grid container -->
+  <div class="container p-4">
+    <!--Grid row-->
+    <div class="row">
+      <!--Grid column-->
+      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">Muebles Movables
+          </h6>
+          <p>
+            Comprometidos sismepre en la elavoracion gestion y atencion de cada uno de nuestros productos como de nuestros clientes.
+          </p>
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+        <h6 class="text-uppercase fw-bold mb-4">Información de la empresa</h6>
+          <p><i class="fas fa-home me-3"></i> Nuñoa, calleje Juanito Fernandez #2753</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            contacto@mueblesmovables.com
+          </p>
+          <p><i class="fas fa-phone me-4"></i> + 332-676-559</p>
+      </div>
+    </div>
+  </div>
+  </section>
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2023 Copyright:
+    <a class="text-reset fw-bold" href="/">MueblesMovables.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
 <div id="nuevosScripts"></div>
 
 <script defer>
