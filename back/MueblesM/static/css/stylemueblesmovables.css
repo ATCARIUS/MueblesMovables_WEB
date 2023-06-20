@@ -58,9 +58,9 @@ body::-webkit-scrollbar-track {
 }
 
 .logo img {
-    width: 250px;
-    height: 250px;
-    margin-top: 2rem;
+    width: 100px;
+    height: 100px;
+    margin-top: 6rem;
 }
 
 .header__info ul li {
@@ -223,21 +223,20 @@ main{
 
 #p1{
     background-color: #c49725;
-	width: 98%;
-	float: left;
+	width: max-content;
 	padding-top: 20px;
 	text-align: center;
-
+    width: 100% !important;
 
 }
 #p2{
     background-color: #c49725;
-	width: 98%;
-	float: right;
+	width: max-content;
 	padding-top: 10px;
     text-align: center;
-
+    width: 100% !important;
 }
+
 
 /* contactanos*/
 
@@ -258,7 +257,7 @@ main{
     position: relative;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -5%);
     box-shadow: 7px 13px 37px rgba(0, 0, 0, .8);
   }
 
