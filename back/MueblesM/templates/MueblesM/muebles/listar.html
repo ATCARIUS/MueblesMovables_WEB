@@ -35,28 +35,34 @@ $(document).ready(function() {
 
 
             <tr>
+                <th>id</th>
                 <th>Marca</th>
                 <th>Tipo De Mueble</th>
                 <th>Precio</th>
                 <th>Tipo De Madera</th>
-                <th><input type="checkbox" id="checkall" />Nuevo o No?</th>
+               <th><input type="checkbox" id="checkall" />Nuevo o No?</th>
                 <th>Fecha de Fabricacion</th>
                 <th>Descripcion</th>
-                <th>Acciones</th>
+                <th>Opciones</th>
             </tr>
             {% for p in productos %}
 
             <tr>
+                <td>{{ p.id | title }}</td>
                 <td>{{ p.marca | title }}</td>
                 <td>{{ p.tipo_mueble | title }}</td>
                 <td>{{ p.precio | title }}</td>
                 <td>{{ p.tipo_madera | title }}</td>
-                <td><input type="checkbox" class="checkthis" /></td>
+                 <td><input type="checkbox" class="checkthis" /></td>
                 <td>{{ p.fecha_fabricacion | title }}</td>
                 <td>{{ p.descripcion | title }}</td>
-                <td><a href="{% url 'modificarProductos' p.id %}" class="btn btn-primary btn-sm">Modificar</a>
-                <a href="{% url 'eliminarProductos' p.id %}" class="btn btn-danger btn-sm">Eliminar</a></td>
-                
+                <td>
+                    <a href="{% url 'modificarProductos' p.id %}" class="btn btn-info btn-sm" >Modificar</a>
+                    <a href="{% url 'eliminarProductos' p.id %}" class="btn btn-danger btn-sm" >Eliminar</a>
+
+
+                </td>
+
 
 
             </tr>
