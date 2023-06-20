@@ -58,9 +58,9 @@ body::-webkit-scrollbar-track {
 }
 
 .logo img {
-    width: 250px;
-    height: 250px;
-    margin-top: 2rem;
+    width: 100px;
+    height: 100px;
+    margin-top: 6rem;
 }
 
 .header__info ul li {
