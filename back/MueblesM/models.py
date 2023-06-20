@@ -29,7 +29,8 @@ class Mueble(models.Model):
     nuevo = models.BooleanField()
     fecha_fabricacion = models.DateField()
     descripcion = models.ForeignKey(Descripcion, on_delete=models.PROTECT)
-
+    imagen = models.ImageField(upload_to="productos", null=True)
+    
     def __str__(self) :
         return self.marca
 
