@@ -10,9 +10,9 @@ def index(request):
 
     return render(request, 'MueblesM/index.html')
 
-# def InicioSesion(request):
+def InicioSesion(request):
 
-#     return render(request,'MueblesM/InicioSesion.html')
+     return render(request,'MueblesM/InicioSesion.html')
 
 
 # def RegistroSesion(request):
@@ -78,7 +78,7 @@ def listarProductos(request):
 
 
 def modificarProductos(request, id):
-        
+
     producto = get_object_or_404(Mueble, id=id)
 
     data = {
