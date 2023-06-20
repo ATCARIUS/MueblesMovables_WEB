@@ -25,7 +25,7 @@ $(document).ready(function() {
    <br>
 </head>
 <div class="col-md-12">
-    <span><a href="/agregarProducto/" class="btn btn-primary">Agregar Nuevo Mueble</a></span>
+    <button type="btn" class="btn btn-primary"><a href="/agregarProducto/">Agregar Nuevo Mueble</a></button>
     <br>
     <br>
 {% block contenido %}
@@ -36,12 +36,13 @@ $(document).ready(function() {
 
             <tr>
                 <th>Marca</th>
-                <th>tipo_mueble</th>
-                <th>precio</th>
-                <th>tipo_madera</th>
+                <th>Tipo De Mueble</th>
+                <th>Precio</th>
+                <th>Tipo De Madera</th>
                 <th><input type="checkbox" id="checkall" />Nuevo o No?</th>
-                <th>fecha_fabricacion</th>
-                <th>descripcion</th>
+                <th>Fecha de Fabricacion</th>
+                <th>Descripcion</th>
+                <th>Acciones</th>
             </tr>
             {% for p in productos %}
 
@@ -53,6 +54,9 @@ $(document).ready(function() {
                 <td><input type="checkbox" class="checkthis" /></td>
                 <td>{{ p.fecha_fabricacion | title }}</td>
                 <td>{{ p.descripcion | title }}</td>
+                <td><a href="{% url 'modificarProductos' p.id %}" class="btn btn-primary btn-sm">Modificar</a>
+                <a href="{% url 'eliminarProductos' p.id %}" class="btn btn-danger btn-sm">Eliminar</a></td>
+                
 
 
             </tr>
@@ -87,6 +91,29 @@ $(document).ready(function() {
         color: #413f3f;
         font-family: "Poppins", sans-serif;
       }
+      table{
+        background-color: white;
+        border-radius: 15px;
+      }
+      .col-md-12 button{
+        width: 20%;
+        height: 50px;
+        border: 1px solid;
+        background: #c49725;
+        border-radius: 25px;
+        font-size: 16px;
+        color: #000000;
+        font-weight: 700;
+        cursor: pointer;
+        outline: none;
 
+    }
+    .col-md-12 a{
+        animation: none;
+        color: black;
+    }
+    .row h4{
+        font-family: "Poppins", sans-serif;
 
+    }
 </style>
