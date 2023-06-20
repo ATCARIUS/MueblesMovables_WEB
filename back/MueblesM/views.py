@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect,HttpResponse
+from django.shortcuts import render, redirect,HttpResponse,get_object_or_404
 from .forms import ProductoForm,Mueble, CustomUserCreationForm
 from django.contrib.auth import authenticate, login,logout
 from django.contrib import messages
