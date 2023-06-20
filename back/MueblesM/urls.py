@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import index ,mueblesmovablesproductos,agregarProducto,listarProductos,registro
+from .views import index ,mueblesmovablesproductos,agregarProducto,listarProductos,registro,eliminarProductos,modificarProductos
 
 urlpatterns = [
     path('',index, name='index'),
