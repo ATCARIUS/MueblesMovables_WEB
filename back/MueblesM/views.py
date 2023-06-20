@@ -22,8 +22,11 @@ def InicioSesion(request):
 
 
 def mueblesmovablesproductos(request):
+    productos= Mueble.objects.all()
+    data = {
+        'productos' : productos
 
-    return render(request,'MueblesM/mueblesmovablesproductos.html')
+    return render(request,'MueblesM/mueblesmovablesproductos.html',data)
 
 
 # def login(request):
@@ -99,3 +102,8 @@ def eliminarProductos(request, id):
     producto = get_object_or_404(Mueble, id=id)
     producto.delete()
     return redirect(to="listarProductos")
+
+def carrito(request):
+
+    return render(request, 'MueblesM/carrito.html')
+
